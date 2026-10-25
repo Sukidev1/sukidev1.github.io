@@ -979,10 +979,54 @@ a.contact-valeur:hover {
 
 /* ===== PIED DE PAGE ===== */
 .footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
     text-align: center;
     padding: 32px 16px;
     font-weight: 600;
     color: var(--texte-doux);
+}
+
+/* Pastille du compteur de vues */
+.compteur-vues {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 18px;
+    border-radius: 999px;
+    background: var(--verre);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid var(--bordure-verre);
+    box-shadow: var(--lueur);
+    transition: transform 0.3s, border-color 0.3s;
+}
+
+.compteur-vues:hover {
+    transform: translateY(-2px);
+    border-color: rgba(255, 188, 220, 0.5);
+}
+
+.compteur-icone {
+    font-size: 1rem;
+    animation: cligne 5s ease-in-out infinite;
+}
+
+#nombre-vues {
+    font-family: var(--police-titre);
+    font-weight: 800;
+    font-size: 1.05rem;
+    font-variant-numeric: tabular-nums;   /* les chiffres ne "sautent" pas pendant le défilement */
+    background: var(--degrade-titre);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.compteur-texte {
+    font-size: 0.9rem;
 }
 
 
@@ -1060,6 +1104,12 @@ a.contact-valeur:hover {
 @keyframes cadeau-flotte {
     0%, 100% { transform: translateY(0) rotate(-4deg); }
     50%      { transform: translateY(-12px) rotate(4deg); }
+}
+
+/* L'œil cligne de temps en temps */
+@keyframes cligne {
+    0%, 92%, 100% { transform: scaleY(1); }
+    96%           { transform: scaleY(0.1); }
 }
 
 @keyframes rebond {

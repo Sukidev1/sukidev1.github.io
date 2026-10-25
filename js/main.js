@@ -246,3 +246,96 @@ if (boutonRemonter) {
     window.addEventListener("scroll", verifierRemonter, { passive: true });
     verifierRemonter();
 }
+
+
+/* ===================================================
+   9. COMPTEUR DE VUES
+   Utilise le service gratuit Abacus.
+   - Une seule vue comptée par visite (pas à chaque
+     actualisation de la page).
+   - Tes propres visites ne comptent pas : ouvre une
+     fois le site avec ?moi à la fin de l'adresse.
+   =================================================== */
+
+const COMPTEUR_URL = "https://abacus.jasoncameron.dev";
+const COMPTEUR_NOM = "sukidev1.github.io/visites";   // espace/clé du compteur
+
+const zoneVues = document.getElementById("nombre-vues");
+
+// Petites fonctions "sûres" : le stockage du navigateur peut être bloqué
+function lireStockage(stockage, cle) {
+    try { return stockage.getItem(cle); } catch { return null; }
+}
+
+function ecrireStockage(stockage, cle, valeur) {
+    try { stockage.setItem(cle, valeur); } catch { /* rien */ }
+}
+
+// Le nombre défile de 0 jusqu'au total
+function animerNombre(element, total) {
+    const formateur = new Intl.NumberFormat("fr-FR");
+
+    if (moinsDAnimations) {
+        element.textContent = formateur.format(total);
+        return;
+    }
+
+    const duree = 1400;
+    const debut = performance.now();
+
+    function etape(maintenant) {
+        const progression = Math.min((maintenant - debut) / duree, 1);
+        const adouci = 1 - Math.pow(1 - progression, 3);   // ralentit à la fin
+        element.textContent = formateur.format(Math.round(total * adouci));
+
+        if (progression < 1) requestAnimationFrame(etape);
+    }
+
+    requestAnimationFrame(etape);
+}
+
+async function chargerCompteur() {
+    if (!zoneVues) return;
+
+    // ?moi dans l'adresse → ce navigateur ne sera plus compté
+    if (new URLSearchParams(window.location.search).has("moi")) {
+        ecrireStockage(localStorage, "sukidev-moi", "1");
+    }
+
+    const estMoi = lireStockage(localStorage, "sukidev-moi") === "1";
+    const dejaCompte = lireStockage(sessionStorage, "sukidev-vue-comptee") === "1";
+
+    // On ajoute une vue seulement pour un vrai visiteur, une fois par visite
+    const action = estMoi || dejaCompte ? "get" : "hit";
+
+    try {
+        const reponse = await fetch(`${COMPTEUR_URL}/${action}/${COMPTEUR_NOM}`);
+
+        // Compteur pas encore créé (personne ne l'a jamais augmenté)
+        if (reponse.status === 404) {
+            zoneVues.textContent = "0";
+            return;
+        }
+
+        if (!reponse.ok) throw new Error(`Réponse ${reponse.status}`);
+
+        const { value } = await reponse.json();
+
+        if (action === "hit") ecrireStockage(sessionStorage, "sukidev-vue-comptee", "1");
+
+        // On lance l'animation quand le pied de page devient visible
+        const observateurVues = new IntersectionObserver((entrees) => {
+            if (entrees[0].isIntersecting) {
+                animerNombre(zoneVues, value);
+                observateurVues.disconnect();
+            }
+        });
+
+        observateurVues.observe(zoneVues);
+    } catch (erreur) {
+        // Le service ne répond pas : on laisse l'étoile, sans casser la page
+        console.warn("Compteur de vues indisponible :", erreur.message);
+    }
+}
+
+chargerCompteur();
