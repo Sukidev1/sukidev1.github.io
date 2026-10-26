@@ -1,0 +1,26 @@
+<!-- sukidev/images/logo/favicon.svg -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+    <defs>
+        <!-- Dégradé pastel du fond -->
+        <linearGradient id="fond" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#ff9ccc"/>
+            <stop offset="55%" stop-color="#b294ff"/>
+            <stop offset="100%" stop-color="#8fd3ff"/>
+        </linearGradient>
+
+        <!-- Masque qui découpe le croissant de lune -->
+        <mask id="croissant">
+            <rect width="64" height="64" fill="white"/>
+            <circle cx="38" cy="25" r="16" fill="black"/>
+        </mask>
+    </defs>
+
+    <!-- Carré arrondi -->
+    <rect width="64" height="64" rx="16" fill="url(#fond)"/>
+
+    <!-- Lune -->
+    <circle cx="30" cy="33" r="18" fill="#fffaf2" mask="url(#croissant)"/>
+
+    <!-- Petite étoile -->
+    <path d="M47 38 L49 43 L54 45 L49 47 L47 52 L45 47 L40 45 L45 43 Z" fill="#fffaf2"/>
+</svg>

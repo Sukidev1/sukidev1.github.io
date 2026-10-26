@@ -1,42 +1,34 @@
-<!-- sukidev/index.html -->
+<!-- index.html -->
 <!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SukiDev — Bots Discord, sites et applis web</title>
-    <meta name="description" content="SukiDev : bots Discord sur mesure, sites web, applis web et dashboards domotiques.">
-
-    <!-- Couleur de la barre du navigateur sur téléphone -->
+    <title>SukiDev — Bots Discord, overlays de stream et sites web</title>
+    <meta name="description" content="SukiDev : bots Discord, overlays de stream, sites web et dashboards domotiques. Créations prêtes à l'emploi et projets sur mesure.">
     <meta name="theme-color" content="#1c1538">
-
-    <!-- Aperçu quand le lien est partagé (Discord, réseaux…) -->
     <meta property="og:title" content="SukiDev — Développeur créatif">
-    <meta property="og:description" content="Bots Discord sur mesure, sites web, applis web et dashboards domotiques ✦">
+    <meta property="og:description" content="Bots Discord, overlays de stream, sites web et dashboards domotiques ✦">
     <meta property="og:type" content="website">
 
-    <!-- Icône de l'onglet -->
-    <link rel="icon" href="images/logo/favicon.svg" type="image/svg+xml">
-
-    <!-- Feuille de style -->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="assets/images/logo/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
-<body>
+<body data-racine="">
 
-    <!-- ===== CIEL ÉTOILÉ (les étoiles sont créées par main.js) ===== -->
     <div class="ciel" aria-hidden="true"></div>
     <div class="lune" aria-hidden="true"></div>
 
-    <!-- ===== MENU DE NAVIGATION ===== -->
+    <!-- ===== MENU ===== -->
     <header class="header">
         <nav class="nav">
-            <a href="#accueil" class="nav-logo">SukiDev</a>
-
-            <ul class="nav-links">
+            <a href="#accueil" class="nav-logo degrade">SukiDev</a>
+            <button class="burger" type="button" aria-label="Ouvrir le menu" aria-expanded="false"><span></span></button>
+            <ul class="nav-liens">
                 <li><a href="#accueil">Accueil</a></li>
                 <li><a href="#savoir-faire">Savoir-faire</a></li>
-                <li><a href="#services">Services</a></li>
                 <li><a href="#boutique">Boutique</a></li>
+                <li><a href="#sur-mesure">Sur mesure</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
@@ -46,335 +38,240 @@
 
         <!-- ===== ACCUEIL ===== -->
         <section id="accueil" class="section hero">
-            <p class="hero-badge">✦ Développeur créatif ✦</p>
-
+            <p class="pastille">✦ Développeur créatif ✦</p>
             <h1>SukiDev</h1>
-
-            <!-- Le mot en dégradé change tout seul grâce à main.js -->
-            <p class="hero-texte">
-                Je crée des <span id="mot-change" class="mot-change">bots Discord</span>
-            </p>
-
-            <div class="hero-boutons">
-                <a href="#savoir-faire" class="bouton bouton-plein">Voir mon savoir-faire</a>
-                <a href="#contact" class="bouton bouton-verre">Me contacter</a>
+            <p class="hero-texte">Je crée des <span id="mot-change" class="mot-change">bots Discord</span></p>
+            <div class="boutons">
+                <a href="#boutique" class="bouton bouton-plein">🛍️ Voir la boutique</a>
+                <a href="#sur-mesure" class="bouton bouton-verre">🛠️ Un projet sur mesure</a>
             </div>
-
-            <a href="#savoir-faire" class="fleche" aria-label="Descendre vers mes savoir-faire">
-                <span></span>
-            </a>
+            <a href="#savoir-faire" class="fleche" aria-label="Descendre"><span></span></a>
         </section>
 
-        <!-- ===== MES SAVOIR-FAIRE ===== -->
-        <section id="savoir-faire" class="section savoir-faire">
-            <h2 class="reveal">Mes savoir-faire</h2>
-            <p class="section-intro reveal">Ce que je sais créer, de Discord jusqu'à la maison ✦</p>
+        <!-- ===== SAVOIR-FAIRE ===== -->
+        <section id="savoir-faire" class="section">
+            <div class="conteneur">
+                <h2 class="titre-etoile reveal">Mes savoir-faire</h2>
+                <p class="section-intro reveal" style="margin-inline:auto">Ce que je sais créer, de Discord jusqu'à la maison ✦</p>
 
-            <!-- Grille des domaines -->
-            <div class="grille-cartes">
+                <div class="grille">
+                    <article class="carte reveal">
+                        <div class="carte-icone">🤖</div>
+                        <h3>Bots Discord</h3>
+                        <p>Des bots pour faire vivre ton serveur : commandes slash, boutons et menus, modération, tickets, giveaways, notifications…</p>
+                        <ul class="pastilles"><li>discord.js</li><li>Node.js</li><li>JavaScript</li></ul>
+                    </article>
+
+                    <article class="carte reveal">
+                        <div class="carte-icone">🎥</div>
+                        <h3>Overlays de stream</h3>
+                        <p>Des écrans, cadres et alertes animés pour donner une vraie identité à ton live, sur OBS et Streamlabs.</p>
+                        <ul class="pastilles"><li>HTML</li><li>CSS</li><li>Animations</li></ul>
+                    </article>
+
+                    <article class="carte reveal">
+                        <div class="carte-icone">🌙</div>
+                        <h3>Sites web</h3>
+                        <p>Des sites vitrines et portfolios animés, qui s'adaptent aussi bien à l'ordinateur qu'au téléphone.</p>
+                        <ul class="pastilles"><li>HTML</li><li>CSS</li><li>JavaScript</li></ul>
+                    </article>
+
+                    <article class="carte reveal">
+                        <div class="carte-icone">☀️</div>
+                        <h3>Domotique</h3>
+                        <p>Des tableaux de bord Home Assistant personnalisés, comme le suivi de l'énergie solaire de la maison.</p>
+                        <ul class="pastilles"><li>Home Assistant</li><li>YAML</li></ul>
+                    </article>
+
+                    <article class="carte reveal">
+                        <div class="carte-icone">🖥️</div>
+                        <h3>Serveurs</h3>
+                        <p>Faire tourner des bots et des projets en continu, installés et surveillés sous Linux.</p>
+                        <ul class="pastilles"><li>Linux</li><li>pm2</li></ul>
+                    </article>
+
+                    <article class="carte carte-bientot reveal">
+                        <div class="carte-icone">✨</div>
+                        <span class="etiquette">Bientôt</span>
+                        <h3>Applis web</h3>
+                        <p>De petits outils en ligne pratiques, à utiliser directement depuis ton navigateur.</p>
+                        <ul class="pastilles"><li>JavaScript</li><li>API</li></ul>
+                    </article>
+                </div>
+
+                <!-- Bandeau des technos (la 2e série permet de boucler sans coupure) -->
+                <div class="defilement reveal" aria-label="Technologies que j'utilise">
+                    <div class="defilement-piste">
+                        <span>JavaScript</span><span>Node.js</span><span>discord.js</span><span>HTML</span><span>CSS</span><span>OBS</span>
+                        <span>API</span><span>Home Assistant</span><span>YAML</span><span>Linux</span><span>pm2</span><span>Git</span>
+                        <span aria-hidden="true">JavaScript</span><span aria-hidden="true">Node.js</span><span aria-hidden="true">discord.js</span><span aria-hidden="true">HTML</span><span aria-hidden="true">CSS</span><span aria-hidden="true">OBS</span>
+                        <span aria-hidden="true">API</span><span aria-hidden="true">Home Assistant</span><span aria-hidden="true">YAML</span><span aria-hidden="true">Linux</span><span aria-hidden="true">pm2</span><span aria-hidden="true">Git</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== BOUTIQUE (remplie par assets/js/produits.js) ===== -->
+        <section id="boutique" class="section">
+            <div class="conteneur">
+                <h2 class="titre-etoile reveal">Boutique</h2>
+                <p class="section-intro reveal" style="margin-inline:auto">Mes créations prêtes à l'emploi, à télécharger en un clic ✦</p>
+
+                <div class="filtres reveal" id="filtres-boutique" aria-label="Catégories"></div>
+                <div class="grille-produits" id="grille-produits"></div>
+            </div>
+        </section>
+
+        <!-- ===== SUR MESURE ===== -->
+        <section id="sur-mesure" class="section">
+            <div class="conteneur" style="display:flex;flex-direction:column;align-items:center">
+                <h2 class="titre-etoile reveal">Sur mesure</h2>
+                <p class="section-intro reveal">Tu veux quelque chose d'unique ? Je le crée pour toi ✦</p>
+                <p class="note-douce reveal">🌸 Prix de lancement pour mes premiers clients</p>
+
+                <div class="filtres reveal" role="tablist">
+                    <button class="filtre onglet actif" data-onglet="bots" role="tab" aria-selected="true">🤖 Bots Discord</button>
+                    <button class="filtre onglet" data-onglet="stream" role="tab" aria-selected="false">🎥 Stream</button>
+                    <button class="filtre onglet" data-onglet="sites" role="tab" aria-selected="false">🌙 Sites web</button>
+                    <button class="filtre onglet" data-onglet="domotique" role="tab" aria-selected="false">☀️ Domotique</button>
+                </div>
 
                 <!-- Bots Discord -->
-                <article class="carte reveal">
-                    <div class="carte-image">🤖</div>
-                    <h3>Bots Discord</h3>
-                    <p>Des bots sur mesure pour faire vivre ton serveur : commandes slash, boutons et menus, modération, tickets, giveaways, notifications…</p>
-                    <ul class="carte-pastilles">
-                        <li>discord.js</li>
-                        <li>Node.js</li>
-                        <li>JavaScript</li>
-                    </ul>
-                </article>
+                <div class="panneau grille-prix" data-panneau="bots" role="tabpanel">
+                    <article class="carte carte-prix reveal">
+                        <h3>Simple</h3>
+                        <p class="prix">15 €</p>
+                        <p class="prix-detail">Pour une ou deux fonctions précises</p>
+                        <ul class="prix-liste">
+                            <li>1 à 2 fonctions</li>
+                            <li>Bienvenue, rôles, notifications…</li>
+                            <li>Code source complet</li>
+                            <li>Guide d'installation</li>
+                            <li>Livré en 3 jours</li>
+                        </ul>
+                    </article>
+                    <article class="carte carte-prix populaire reveal">
+                        <span class="badge-populaire">Populaire</span>
+                        <h3>Intermédiaire</h3>
+                        <p class="prix">40 €</p>
+                        <p class="prix-detail">Le bon équilibre pour la plupart des serveurs</p>
+                        <ul class="prix-liste">
+                            <li>Jusqu'à 5 modules</li>
+                            <li>Modération, tickets, giveaways…</li>
+                            <li>Embeds aux couleurs de ton serveur</li>
+                            <li>Code source complet</li>
+                            <li>Livré en 7 jours</li>
+                        </ul>
+                    </article>
+                    <article class="carte carte-prix reveal">
+                        <h3>Complet</h3>
+                        <p class="prix"><span class="prix-apartir">à partir de</span>80 €</p>
+                        <p class="prix-detail">Un bot unique, pensé de A à Z</p>
+                        <ul class="prix-liste">
+                            <li>Bot entièrement sur mesure</li>
+                            <li>Thème et fonctions spécifiques</li>
+                            <li>Code source complet</li>
+                            <li>Délai selon le projet</li>
+                        </ul>
+                    </article>
+                </div>
+
+                <!-- Stream -->
+                <div class="panneau grille-prix" data-panneau="stream" role="tabpanel" hidden>
+                    <article class="carte carte-prix reveal">
+                        <h3>Pack d'overlays perso</h3>
+                        <p class="prix prix-petit">Sur devis</p>
+                        <p class="prix-detail">Un pack unique à tes couleurs et à ton univers</p>
+                        <ul class="prix-liste">
+                            <li>Écrans, cadres, barre d'infos</li>
+                            <li>Alertes animées</li>
+                            <li>Ton pseudo et tes réseaux intégrés</li>
+                            <li>Installation expliquée pas à pas</li>
+                        </ul>
+                    </article>
+                </div>
 
                 <!-- Sites web -->
-                <article class="carte reveal">
-                    <div class="carte-image">🌙</div>
-                    <h3>Sites web</h3>
-                    <p>Des sites vitrines et portfolios animés, qui s'adaptent aussi bien à l'ordinateur qu'au téléphone.</p>
-                    <ul class="carte-pastilles">
-                        <li>HTML</li>
-                        <li>CSS</li>
-                        <li>JavaScript</li>
-                        <li>Animations</li>
-                    </ul>
-                </article>
-
-                <!-- Applis web -->
-                <article class="carte carte-mystere reveal">
-                    <div class="carte-image">✨</div>
-                    <div class="carte-etiquettes">
-                        <span class="carte-statut">Bientôt</span>
-                    </div>
-                    <h3>Applis web</h3>
-                    <p>De petits outils en ligne pratiques, à utiliser directement depuis ton navigateur.</p>
-                    <ul class="carte-pastilles">
-                        <li>JavaScript</li>
-                        <li>API</li>
-                    </ul>
-                </article>
+                <div class="panneau grille-prix" data-panneau="sites" role="tabpanel" hidden>
+                    <article class="carte carte-prix reveal">
+                        <h3>Page unique</h3>
+                        <p class="prix prix-petit">Sur devis</p>
+                        <p class="prix-detail">Une belle page pour te présenter</p>
+                        <ul class="prix-liste">
+                            <li>Portfolio ou carte de visite en ligne</li>
+                            <li>Design animé à ton image</li>
+                            <li>Adapté au téléphone</li>
+                            <li>Aide à la mise en ligne</li>
+                        </ul>
+                    </article>
+                    <article class="carte carte-prix populaire reveal">
+                        <span class="badge-populaire">Populaire</span>
+                        <h3>Site vitrine</h3>
+                        <p class="prix prix-petit">Sur devis</p>
+                        <p class="prix-detail">Plusieurs sections pour tout présenter</p>
+                        <ul class="prix-liste">
+                            <li>Accueil, services, galerie, contact…</li>
+                            <li>Animations et effets soignés</li>
+                            <li>Adapté au téléphone</li>
+                            <li>Aide à la mise en ligne</li>
+                        </ul>
+                    </article>
+                </div>
 
                 <!-- Domotique -->
-                <article class="carte reveal">
-                    <div class="carte-image">☀️</div>
-                    <h3>Domotique</h3>
-                    <p>Des tableaux de bord Home Assistant personnalisés, comme le suivi de l'énergie solaire de la maison.</p>
-                    <ul class="carte-pastilles">
-                        <li>Home Assistant</li>
-                        <li>YAML</li>
-                        <li>Cartes perso</li>
-                    </ul>
-                </article>
-
-                <!-- Serveurs et hébergement -->
-                <article class="carte reveal">
-                    <div class="carte-image">🖥️</div>
-                    <h3>Serveurs</h3>
-                    <p>Faire tourner des bots et des projets en continu, installés et surveillés sous Linux.</p>
-                    <ul class="carte-pastilles">
-                        <li>Linux</li>
-                        <li>pm2</li>
-                    </ul>
-                </article>
-
-            </div>
-
-            <!-- Bandeau des technos qui défile en continu -->
-            <div class="defilement reveal" aria-label="Technologies que j'utilise">
-                <div class="defilement-piste">
-                    <!-- Première série -->
-                    <span>JavaScript</span>
-                    <span>Node.js</span>
-                    <span>discord.js</span>
-                    <span>HTML</span>
-                    <span>CSS</span>
-                    <span>API</span>
-                    <span>Home Assistant</span>
-                    <span>YAML</span>
-                    <span>Linux</span>
-                    <span>pm2</span>
-                    <span>Git</span>
-                    <span>VS Code</span>
-
-                    <!-- Deuxième série identique : elle permet au défilement de boucler sans coupure -->
-                    <span aria-hidden="true">JavaScript</span>
-                    <span aria-hidden="true">Node.js</span>
-                    <span aria-hidden="true">discord.js</span>
-                    <span aria-hidden="true">HTML</span>
-                    <span aria-hidden="true">CSS</span>
-                    <span aria-hidden="true">API</span>
-                    <span aria-hidden="true">Home Assistant</span>
-                    <span aria-hidden="true">YAML</span>
-                    <span aria-hidden="true">Linux</span>
-                    <span aria-hidden="true">pm2</span>
-                    <span aria-hidden="true">Git</span>
-                    <span aria-hidden="true">VS Code</span>
+                <div class="panneau grille-prix" data-panneau="domotique" role="tabpanel" hidden>
+                    <article class="carte carte-prix reveal">
+                        <h3>Dashboard Home Assistant</h3>
+                        <p class="prix prix-petit">Sur devis</p>
+                        <p class="prix-detail">Un tableau de bord clair et joli pour ta maison</p>
+                        <ul class="prix-liste">
+                            <li>Mise en page sur mesure</li>
+                            <li>Énergie, météo, appareils…</li>
+                            <li>Cartes personnalisées</li>
+                            <li>Configuration prête à coller</li>
+                        </ul>
+                    </article>
                 </div>
-            </div>
-        </section>
 
-        <!-- ===== SERVICES ===== -->
-        <section id="services" class="section services">
-            <h2 class="reveal">Services</h2>
-            <p class="section-intro reveal">Choisis ce que tu veux, je le crée sur mesure pour toi ✦</p>
-            <p class="note-lancement reveal">🌸 Prix de lancement pour mes premiers clients</p>
-
-            <!-- Onglets : un clic affiche les offres de la catégorie -->
-            <div class="onglets reveal" role="tablist">
-                <button class="onglet actif" data-onglet="bots" role="tab" aria-selected="true">🤖 Bots Discord</button>
-                <button class="onglet" data-onglet="sites" role="tab" aria-selected="false">🌙 Sites web</button>
-                <button class="onglet" data-onglet="domotique" role="tab" aria-selected="false">☀️ Domotique</button>
-                <button class="onglet" data-onglet="applis" role="tab" aria-selected="false">✨ Applis web</button>
-            </div>
-
-            <!-- ── Panneau : Bots Discord ── -->
-            <div class="panneau grille-prix" data-panneau="bots" role="tabpanel">
-
-                <article class="carte carte-prix reveal">
-                    <h3>Simple</h3>
-                    <p class="prix">15 €</p>
-                    <p class="prix-detail">Pour une ou deux fonctions précises</p>
-                    <ul class="prix-liste">
-                        <li>1 à 2 fonctions</li>
-                        <li>Bienvenue, rôles, notifications…</li>
-                        <li>Code source complet</li>
-                        <li>Guide d'installation</li>
-                        <li>Livré en 3 jours</li>
-                    </ul>
-                </article>
-
-                <article class="carte carte-prix populaire reveal">
-                    <span class="badge-populaire">Populaire</span>
-                    <h3>Intermédiaire</h3>
-                    <p class="prix">40 €</p>
-                    <p class="prix-detail">Le bon équilibre pour la plupart des serveurs</p>
-                    <ul class="prix-liste">
-                        <li>Jusqu'à 5 modules</li>
-                        <li>Modération, tickets, giveaways…</li>
-                        <li>Embeds aux couleurs de ton serveur</li>
-                        <li>Code source complet</li>
-                        <li>Guide d'installation</li>
-                        <li>Livré en 7 jours</li>
-                    </ul>
-                </article>
-
-                <article class="carte carte-prix reveal">
-                    <h3>Complet</h3>
-                    <p class="prix"><span class="prix-apartir">à partir de</span> 80 €</p>
-                    <p class="prix-detail">Un bot unique, pensé de A à Z</p>
-                    <ul class="prix-liste">
-                        <li>Bot entièrement sur mesure</li>
-                        <li>Thème et fonctions spécifiques</li>
-                        <li>Code source complet</li>
-                        <li>Guide d'installation</li>
-                        <li>Délai selon le projet</li>
-                    </ul>
-                </article>
-            </div>
-
-            <!-- ── Panneau : Sites web ── -->
-            <div class="panneau grille-prix" data-panneau="sites" role="tabpanel" hidden>
-
-                <article class="carte carte-prix reveal">
-                    <h3>Page unique</h3>
-                    <p class="prix prix-devis">Sur devis</p>
-                    <p class="prix-detail">Une belle page pour te présenter</p>
-                    <ul class="prix-liste">
-                        <li>Portfolio ou carte de visite en ligne</li>
-                        <li>Design animé à ton image</li>
-                        <li>Adapté au téléphone</li>
-                        <li>Aide à la mise en ligne</li>
-                    </ul>
-                </article>
-
-                <article class="carte carte-prix populaire reveal">
-                    <span class="badge-populaire">Populaire</span>
-                    <h3>Site vitrine</h3>
-                    <p class="prix prix-devis">Sur devis</p>
-                    <p class="prix-detail">Plusieurs sections pour tout présenter</p>
-                    <ul class="prix-liste">
-                        <li>Accueil, services, galerie, contact…</li>
-                        <li>Animations et effets soignés</li>
-                        <li>Adapté au téléphone</li>
-                        <li>Code source complet</li>
-                        <li>Aide à la mise en ligne</li>
-                    </ul>
-                </article>
-            </div>
-
-            <!-- ── Panneau : Domotique ── -->
-            <div class="panneau grille-prix" data-panneau="domotique" role="tabpanel" hidden>
-
-                <article class="carte carte-prix reveal">
-                    <h3>Dashboard Home Assistant</h3>
-                    <p class="prix prix-devis">Sur devis</p>
-                    <p class="prix-detail">Un tableau de bord clair et joli pour ta maison</p>
-                    <ul class="prix-liste">
-                        <li>Mise en page sur mesure</li>
-                        <li>Suivi d'énergie, météo, appareils…</li>
-                        <li>Cartes personnalisées</li>
-                        <li>Configuration prête à coller</li>
-                    </ul>
-                </article>
-            </div>
-
-            <!-- ── Panneau : Applis web ── -->
-            <div class="panneau grille-prix" data-panneau="applis" role="tabpanel" hidden>
-
-                <article class="carte carte-prix carte-mystere reveal">
-                    <h3>Outil sur mesure</h3>
-                    <p class="prix prix-devis">Bientôt</p>
-                    <p class="prix-detail">Une petite appli web pensée pour un besoin précis</p>
-                    <ul class="prix-liste">
-                        <li>Utilisable depuis le navigateur</li>
-                        <li>Simple et rapide</li>
-                        <li>Contacte-moi pour en parler</li>
-                    </ul>
-                </article>
-            </div>
-
-            <!-- Liens pour commander -->
-            <div class="services-liens reveal">
-                <p>Tu peux commander directement sur :</p>
-                <div class="hero-boutons">
-                    <a href="https://www.fiverr.com/x_suki" class="bouton bouton-plein" target="_blank" rel="noopener">Fiverr</a>
-                    <a href="#contact" class="bouton bouton-verre">Par message</a>
-                </div>
-            </div>
-        </section>
-
-        <!-- ===== BOUTIQUE ===== -->
-        <section id="boutique" class="section boutique">
-            <h2 class="reveal">Boutique</h2>
-            <p class="section-intro reveal">Mes créations prêtes à l'emploi, à télécharger en un clic ✦</p>
-
-            <div class="grille-boutique">
-
-                <!-- Produit : SukiTickets (toute la carte est un lien vers sa page) -->
-                <a href="sukitickets.html" class="carte carte-produit reveal">
-                    <div class="produit-entete">
-                        <div class="carte-image">🎫</div>
-                        <span class="badge-nouveau">Nouveau</span>
+                <div class="commander reveal">
+                    <p>Pour commander :</p>
+                    <div class="boutons">
+                        <a href="https://www.fiverr.com/x_suki" class="bouton bouton-plein" target="_blank" rel="noopener">Sur Fiverr</a>
+                        <a href="#contact" class="bouton bouton-verre">Par message</a>
                     </div>
-                    <h3>SukiTickets</h3>
-                    <p>Le système de tickets élégant pour ton serveur Discord : configuration en un clic, transcriptions, logs, en français et en anglais.</p>
-                    <ul class="carte-pastilles">
-                        <li>Gratuit</li>
-                        <li>💎 Premium 5,99 €</li>
-                    </ul>
-                    <span class="lien-produit">Voir le produit →</span>
-                </a>
-
-                <!-- Les prochaines créations -->
-                <div class="carte carte-attente carte-attente-petite reveal">
-                    <div class="cadeau" aria-hidden="true">🎁</div>
-                    <h3>D'autres créations arrivent</h3>
-                    <p>De nouveaux bots et d'autres surprises sont en préparation. Reviens vite ✦</p>
                 </div>
-
             </div>
         </section>
 
         <!-- ===== CONTACT ===== -->
-        <section id="contact" class="section contact">
-            <h2 class="reveal">Contact</h2>
-            <p class="section-intro reveal">Une idée de bot, une question ? Écris-moi ✦</p>
+        <section id="contact" class="section">
+            <h2 class="titre-etoile reveal">Contact</h2>
+            <p class="section-intro reveal">Une idée, une question sur un produit ? Écris-moi ✦</p>
 
             <div class="carte carte-contact reveal">
-
-                <!-- Email -->
                 <div class="contact-ligne">
-                    <div class="contact-icone">✉️</div>
+                    <div class="carte-icone">✉️</div>
                     <div class="contact-infos">
-                        <span class="contact-label">Email</span>
+                        <span class="contact-label">E-mail</span>
                         <a href="mailto:sukidev.contact@gmail.com" class="contact-valeur">sukidev.contact@gmail.com</a>
                     </div>
-                    <button class="bouton-copier" data-copier="sukidev.contact@gmail.com">
-                        Copier
-                        <span class="bulle-copie" aria-hidden="true">Copié ! ✦</span>
-                    </button>
+                    <button class="bouton-copier" type="button" data-copier="sukidev.contact@gmail.com">Copier<span class="bulle-copie" aria-hidden="true">Copié ! ✦</span></button>
                 </div>
-
-                <!-- Discord -->
                 <div class="contact-ligne">
-                    <div class="contact-icone">💬</div>
+                    <div class="carte-icone">💬</div>
                     <div class="contact-infos">
                         <span class="contact-label">Discord</span>
                         <span class="contact-valeur">souksouk13</span>
                     </div>
-                    <button class="bouton-copier" data-copier="souksouk13">
-                        Copier
-                        <span class="bulle-copie" aria-hidden="true">Copié ! ✦</span>
-                    </button>
+                    <button class="bouton-copier" type="button" data-copier="souksouk13">Copier<span class="bulle-copie" aria-hidden="true">Copié ! ✦</span></button>
                 </div>
-
-                <!-- Plateforme -->
-                <div class="contact-plateformes">
-                    <p>Ou retrouve-moi sur</p>
-                    <div class="contact-boutons">
-                        <a href="https://www.fiverr.com/x_suki" class="bouton bouton-plein" target="_blank" rel="noopener">Fiverr</a>
+                <div class="contact-ligne">
+                    <div class="carte-icone">🛠️</div>
+                    <div class="contact-infos">
+                        <span class="contact-label">Fiverr</span>
+                        <a href="https://www.fiverr.com/x_suki" class="contact-valeur" target="_blank" rel="noopener">x_suki</a>
                     </div>
                 </div>
-
-                <!-- Annonce invisible pour les lecteurs d'écran quand on copie -->
                 <p class="sr-only" aria-live="polite" id="annonce-copie"></p>
             </div>
         </section>
@@ -383,22 +280,19 @@
 
     <!-- ===== PIED DE PAGE ===== -->
     <footer class="footer">
-        <!-- Compteur de vues (rempli par main.js) -->
-        <p class="compteur-vues" title="Nombre de visites du site">
-            <span class="compteur-icone" aria-hidden="true">👁</span>
-            <span id="nombre-vues">✦</span>
-            <span class="compteur-texte">vues</span>
-        </p>
-
+        <nav class="footer-liens">
+            <a href="#savoir-faire">Savoir-faire</a>
+            <a href="#boutique">Boutique</a>
+            <a href="#sur-mesure">Sur mesure</a>
+            <a href="#contact">Contact</a>
+        </nav>
+        <p class="compteur-vues" title="Nombre de visites du site"><span aria-hidden="true">👁</span><span id="nombre-vues">✦</span> vues</p>
         <p>© 2026 SukiDev · fait avec ✦ sous les étoiles</p>
     </footer>
 
-    <!-- ===== BOUTON "REMONTER EN HAUT" (apparaît quand on descend) ===== -->
-    <a href="#accueil" class="remonter" aria-label="Remonter en haut de la page">
-        <span></span>
-    </a>
+    <a href="#accueil" class="remonter" aria-label="Remonter en haut de la page"><span></span></a>
 
-    <!-- Script -->
-    <script src="js/main.js"></script>
+    <script src="assets/js/produits.js"></script>
+    <script src="assets/js/main.js"></script>
 </body>
 </html>

@@ -1,4 +1,4 @@
-<!-- sukidev/sukitickets.html -->
+<!-- produits/sukitickets.html -->
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -6,34 +6,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SukiTickets — Bot Discord de tickets · SukiDev</title>
     <meta name="description" content="SukiTickets : le système de tickets élégant pour ton serveur Discord. Version gratuite et Premium à 5,99 €.">
-
     <meta name="theme-color" content="#1c1538">
-    <meta property="og:title" content="SukiTickets — Bot Discord de tickets">
+    <meta property="og:title" content="SukiTickets — Bot Discord de tickets · SukiDev">
     <meta property="og:description" content="Configuration en un clic, transcriptions, logs, français et anglais. Gratuit · Premium 5,99 € ✦">
     <meta property="og:type" content="product">
 
-    <link rel="icon" href="images/logo/favicon.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="../assets/images/logo/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../assets/css/style.css">
 
-    <!-- Bouton de paiement Payhip (la fenêtre de paiement s'ouvre par-dessus la page) -->
+    <!-- Bouton de paiement Payhip (la fenêtre de paiement s'ouvre sur la page) -->
     <script src="https://payhip.com/payhip.js"></script>
 </head>
-<body>
+<body data-racine="../">
 
-    <!-- ===== CIEL ÉTOILÉ ===== -->
     <div class="ciel" aria-hidden="true"></div>
     <div class="lune" aria-hidden="true"></div>
 
     <!-- ===== MENU ===== -->
     <header class="header">
         <nav class="nav">
-            <a href="index.html" class="nav-logo">SukiDev</a>
-            <ul class="nav-links">
-                <li><a href="index.html#accueil">Accueil</a></li>
-                <li><a href="index.html#savoir-faire">Savoir-faire</a></li>
-                <li><a href="index.html#services">Services</a></li>
-                <li><a href="index.html#boutique">Boutique</a></li>
-                <li><a href="index.html#contact">Contact</a></li>
+            <a href="../index.html" class="nav-logo degrade">SukiDev</a>
+            <button class="burger" type="button" aria-label="Ouvrir le menu" aria-expanded="false"><span></span></button>
+            <ul class="nav-liens">
+                <li><a href="../index.html">Accueil</a></li>
+                <li><a href="../index.html#savoir-faire">Savoir-faire</a></li>
+                <li><a href="../index.html#boutique" class="actif">Boutique</a></li>
+                <li><a href="../index.html#sur-mesure">Sur mesure</a></li>
+                <li><a href="../index.html#contact">Contact</a></li>
             </ul>
         </nav>
     </header>
@@ -41,168 +40,164 @@
     <main>
 
         <!-- ===== PRÉSENTATION ===== -->
-        <section id="accueil" class="section hero produit-hero">
-            <p class="hero-badge">🎫 Bot Discord · par SukiDev</p>
-            <h1>SukiTickets</h1>
-            <p class="hero-texte">Le système de tickets <span class="mot-change">élégant</span> pour ton serveur Discord.</p>
-
-            <div class="hero-boutons">
-                <!-- Le zip gratuit est à mettre dans le dossier "telechargements" du site -->
-                <a href="telechargements/SukiTickets-v1.0.0.zip" class="bouton bouton-verre" download>⬇️ Télécharger gratuitement</a>
-                <a href="#tarifs" class="bouton bouton-plein">💎 Premium — 5,99 €</a>
-            </div>
-
-            <!-- Aperçu d'un ticket -->
-            <div class="carte apercu" aria-hidden="true">
-                <div class="apercu-message">
-                    <div class="apercu-avatar">🌙</div>
-                    <div style="flex:1;min-width:0">
-                        <div class="apercu-nom">SukiTickets<span class="apercu-tag">BOT</span></div>
-                        <div class="apercu-embed">
-                            <b>🎫 Ticket #0001 — 🛟 Support</b>
-                            <p>Bienvenue @Léa ! Explique ta demande le plus précisément possible : un membre de l'équipe va te répondre très vite ✦</p>
-                            <div class="apercu-champs">
-                                <div><span>📁 Catégorie</span>🛟 Support</div>
-                                <div><span>👤 Ouvert par</span>@Léa</div>
-                                <div><span>🙋 Pris en charge</span>@Mika</div>
-                            </div>
+        <section id="haut" class="section">
+            <div class="conteneur" style="display:flex;flex-direction:column">
+                <a href="../index.html#boutique" class="retour">← Retour à la boutique</a>
+                <div class="produit-hero">
+                    <div>
+                        <p class="pastille">🤖 Bot Discord · FR / EN</p>
+                        <h1>SukiTickets</h1>
+                        <p class="hero-texte">Le système de tickets <span class="degrade">élégant</span> pour ton serveur Discord.</p>
+                        <div class="boutons">
+                            <a href="../telechargements/SukiTickets-v1.0.0.zip" class="bouton bouton-verre" download>⬇️ Télécharger gratuitement</a>
+                            <a href="#tarifs" class="bouton bouton-plein">💎 Premium — 5,99 €</a>
                         </div>
-                        <div class="apercu-boutons">
-                            <span class="apercu-vert">🙋 Prendre en charge</span>
-                            <span class="apercu-rouge">🔒 Fermer</span>
-                        </div>
+                        <ul class="pastilles">
+                            <li>⚙️ Config en 1 clic</li><li>📄 Transcriptions</li><li>📋 Logs</li><li>🌐 FR / EN</li>
+                        </ul>
+                    </div>
+                    <div class="produit-couverture">
+                        <img src="../assets/images/produits/sukitickets/couverture.webp" alt="Aperçu de SukiTickets">
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- ===== FONCTIONNALITÉS ===== -->
-        <section id="fonctions" class="section produit-section">
-            <h2 class="reveal">Fonctionnalités</h2>
-            <p class="section-intro reveal">Tout ce qu'il faut pour un vrai service d'aide, sans prise de tête ✦</p>
+        <!-- ===== EN IMAGES (clic = agrandir) ===== -->
+        <section id="images" class="section">
+            <div class="conteneur">
+                <h2 class="titre-etoile reveal">En images</h2>
+                <p class="section-intro reveal" style="margin-inline:auto">Clique sur une image pour l'agrandir ✦</p>
+                <div class="galerie">
+                    <button type="button"><img src="../assets/images/produits/sukitickets/configuration.webp" alt="Configuration avec /setup" loading="lazy"></button>
+                    <button type="button"><img src="../assets/images/produits/sukitickets/menu-tickets.webp" alt="Menu des catégories" loading="lazy"></button>
+                    <button type="button"><img src="../assets/images/produits/sukitickets/formulaire.webp" alt="Formulaire avant l'ouverture (Premium)" loading="lazy"></button>
+                    <button type="button"><img src="../assets/images/produits/sukitickets/notes-stats.webp" alt="Notes et statistiques (Premium)" loading="lazy"></button>
+                    <button type="button"><img src="../assets/images/produits/sukitickets/priorite-inactivite.webp" alt="Priorité et fermeture automatique (Premium)" loading="lazy"></button>
+                    <button type="button"><img src="../assets/images/produits/sukitickets/transcriptions-logs.webp" alt="Transcriptions et logs" loading="lazy"></button>
+                    <button type="button"><img src="../assets/images/produits/sukitickets/gratuit-vs-premium.webp" alt="Comparatif Gratuit / Premium" loading="lazy"></button>
+                </div>
+            </div>
+        </section>
 
-            <div class="grille-cartes">
-                <article class="carte reveal">
-                    <div class="carte-image">⚙️</div>
-                    <h3>Configuration en un clic</h3>
-                    <p>Tout se règle dans Discord avec <code>/setup</code> : rôles staff, catégorie, salon de logs. Le bot peut même tout créer pour toi.</p>
-                </article>
-                <article class="carte reveal">
-                    <div class="carte-image">🗂️</div>
-                    <h3>Catégories personnalisées</h3>
-                    <p>Jusqu'à 25 catégories avec leur nom, leur emoji et leur description, dans un joli menu déroulant.</p>
-                </article>
-                <article class="carte reveal">
-                    <div class="carte-image">🔒</div>
-                    <h3>Tickets privés</h3>
-                    <p>Chaque ticket est un salon visible seulement par le membre, le staff et le bot.</p>
-                </article>
-                <article class="carte reveal">
-                    <div class="carte-image">🙋</div>
-                    <h3>Prise en charge</h3>
-                    <p>Un bouton pour que le staff s'attribue un ticket, et un autre pour le fermer avec confirmation.</p>
-                </article>
-                <article class="carte reveal">
-                    <div class="carte-image">📄</div>
-                    <h3>Transcriptions</h3>
-                    <p>Chaque ticket fermé est archivé dans une belle page HTML, envoyée dans les logs et au membre en MP.</p>
-                </article>
-                <article class="carte reveal">
-                    <div class="carte-image">📋</div>
-                    <h3>Logs complets</h3>
-                    <p>Ouvertures, prises en charge, fermetures, ajouts de membres… tout est noté dans ton salon de logs.</p>
-                </article>
-                <article class="carte reveal">
-                    <div class="carte-image">🛠️</div>
-                    <h3>Commandes staff</h3>
-                    <p>Ajouter ou retirer un membre d'un ticket, renommer un ticket, en une commande.</p>
-                </article>
-                <article class="carte reveal">
-                    <div class="carte-image">🌐</div>
-                    <h3>Français & anglais</h3>
-                    <p>Le bot et ses commandes s'adaptent à la langue de chaque serveur et de chaque utilisateur.</p>
-                </article>
+        <section id="fonctions" class="section">
+            <div class="conteneur">
+                <h2 class="titre-etoile reveal">Fonctionnalités</h2>
+                <p class="section-intro reveal" style="margin-inline:auto">Tout ce qu'il faut pour un vrai service d'aide, sans prise de tête ✦</p>
+                <div class="grille">
+                    <article class="carte reveal">
+                        <div class="carte-icone">⚙️</div>
+                        <h3>Configuration en un clic</h3>
+                        <p>Tout se règle dans Discord avec <code>/setup</code> : rôles staff, catégorie, salon de logs. Le bot peut même tout créer pour toi.</p>
+                    </article>
+                    <article class="carte reveal">
+                        <div class="carte-icone">🗂️</div>
+                        <h3>Catégories personnalisées</h3>
+                        <p>Jusqu'à 25 catégories avec leur nom, leur emoji et leur description, dans un joli menu déroulant.</p>
+                    </article>
+                    <article class="carte reveal">
+                        <div class="carte-icone">🔒</div>
+                        <h3>Tickets privés</h3>
+                        <p>Chaque ticket est un salon visible seulement par le membre, le staff et le bot.</p>
+                    </article>
+                    <article class="carte reveal">
+                        <div class="carte-icone">🙋</div>
+                        <h3>Prise en charge</h3>
+                        <p>Un bouton pour que le staff s'attribue un ticket, et un autre pour le fermer avec confirmation.</p>
+                    </article>
+                    <article class="carte reveal">
+                        <div class="carte-icone">📄</div>
+                        <h3>Transcriptions</h3>
+                        <p>Chaque ticket fermé est archivé dans une belle page HTML, envoyée dans les logs et au membre en MP.</p>
+                    </article>
+                    <article class="carte reveal">
+                        <div class="carte-icone">📋</div>
+                        <h3>Logs complets</h3>
+                        <p>Ouvertures, prises en charge, fermetures, ajouts de membres… tout est noté dans ton salon de logs.</p>
+                    </article>
+                    <article class="carte reveal">
+                        <div class="carte-icone">🛠️</div>
+                        <h3>Commandes staff</h3>
+                        <p>Ajouter ou retirer un membre d'un ticket, renommer un ticket, en une commande.</p>
+                    </article>
+                    <article class="carte reveal">
+                        <div class="carte-icone">🌐</div>
+                        <h3>Français & anglais</h3>
+                        <p>Le bot et ses commandes s'adaptent à la langue de chaque serveur et de chaque utilisateur.</p>
+                    </article>
+                </div>
             </div>
         </section>
 
         <!-- ===== TARIFS ===== -->
-        <section id="tarifs" class="section produit-section services">
-            <h2 class="reveal">Gratuit ou Premium ?</h2>
-            <p class="section-intro reveal">Commence gratuitement, passe en Premium quand tu veux : tes réglages sont conservés ✦</p>
+        <section id="tarifs" class="section">
+            <div class="conteneur">
+                <h2 class="titre-etoile reveal">Gratuit ou Premium ?</h2>
+                <p class="section-intro reveal" style="margin-inline:auto">Commence gratuitement, passe en Premium quand tu veux : tes réglages sont conservés ✦</p>
 
-            <div class="grille-prix">
+                <div class="grille-tarifs">
+                    <article class="carte carte-prix reveal">
+                        <h3>Gratuit</h3>
+                        <p class="prix">0 €</p>
+                        <p class="prix-detail">Tout l'essentiel pour bien démarrer</p>
+                        <ul class="prix-liste">
+                            <li>Configuration avec /setup</li>
+                            <li>Jusqu'à 25 catégories</li>
+                            <li>Tickets privés et prise en charge</li>
+                            <li>Transcriptions HTML</li>
+                            <li>Logs complets</li>
+                            <li>/ajouter, /retirer, /renommer</li>
+                            <li>Français et anglais</li>
+                        </ul>
+                        <a href="../telechargements/SukiTickets-v1.0.0.zip" class="bouton bouton-verre" download>⬇️ Télécharger</a>
+                    </article>
 
-                <!-- Version gratuite -->
-                <article class="carte carte-prix reveal">
-                    <h3>Gratuit</h3>
-                    <p class="prix">0 €</p>
-                    <p class="prix-detail">Tout l'essentiel pour bien démarrer</p>
-                    <ul class="prix-liste">
-                        <li>Configuration avec /setup</li>
-                        <li>Jusqu'à 25 catégories</li>
-                        <li>Tickets privés et prise en charge</li>
-                        <li>Transcriptions HTML</li>
-                        <li>Logs complets</li>
-                        <li>/ajouter, /retirer, /renommer</li>
-                        <li>Français et anglais</li>
-                    </ul>
-                    <a href="telechargements/SukiTickets-v1.0.0.zip" class="bouton bouton-verre" download>⬇️ Télécharger</a>
-                </article>
-
-                <!-- Version premium -->
-                <article class="carte carte-prix populaire reveal">
-                    <span class="badge-populaire">Le plus complet</span>
-                    <h3>Premium</h3>
-                    <p class="prix">5,99 €</p>
-                    <p class="prix-detail">Paiement unique · tout le gratuit, plus :</p>
-                    <ul class="prix-liste">
-                        <li>📝 Formulaire avant l'ouverture</li>
-                        <li>⏰ Fermeture des tickets inactifs</li>
-                        <li>⭐ Notes de satisfaction</li>
-                        <li>📊 Statistiques /stats</li>
-                        <li>🚦 Priorité des tickets</li>
-                    </ul>
-
-                    <!-- Bouton Payhip : la fenêtre de paiement s'ouvre sur la page -->
-                    <a href="https://payhip.com/b/3uYdW"
-                       class="payhip-buy-button bouton bouton-plein"
-                       data-theme="none"
-                       data-product="3uYdW">💳 Acheter — 5,99 €</a>
-
-                    <p class="note-paiement">Paiement sécurisé par Payhip · PayPal ou carte<br>Fichiers envoyés automatiquement</p>
-                </article>
-
+                    <article class="carte carte-prix populaire reveal">
+                        <span class="badge-populaire">Le plus complet</span>
+                        <h3>Premium</h3>
+                        <p class="prix">5,99 €</p>
+                        <p class="prix-detail">Paiement unique · tout le gratuit, plus :</p>
+                        <ul class="prix-liste">
+                            <li>📝 Formulaire avant l'ouverture</li>
+                            <li>⏰ Fermeture des tickets inactifs</li>
+                            <li>⭐ Notes de satisfaction</li>
+                            <li>📊 Statistiques /stats</li>
+                            <li>🚦 Priorité des tickets</li>
+                        </ul>
+                        <a href="https://payhip.com/b/3uYdW" class="payhip-buy-button bouton bouton-plein" data-theme="none" data-product="3uYdW">💳 Acheter — 5,99 €</a>
+                        <p class="note-paiement">Paiement sécurisé par Payhip · PayPal ou carte<br>Fichiers envoyés automatiquement</p>
+                    </article>
+                </div>
             </div>
         </section>
 
-        <!-- ===== INSTALLATION ===== -->
-        <section id="installation" class="section produit-section">
-            <h2 class="reveal">Installation</h2>
-            <p class="section-intro reveal">Un guide complet en français et en anglais est inclus ✦</p>
-
-            <div class="etapes">
-                <article class="carte reveal">
-                    <div class="numero-etape">1</div>
-                    <h3>Télécharge</h3>
-                    <p>Décompresse l'archive, puis installe le bot avec <code>npm install</code>.</p>
-                </article>
-                <article class="carte reveal">
-                    <div class="numero-etape">2</div>
-                    <h3>Connecte ton bot</h3>
-                    <p>Crée ton application Discord, colle ton token dans le fichier <code>.env</code> et lance <code>npm start</code>.</p>
-                </article>
-                <article class="carte reveal">
-                    <div class="numero-etape">3</div>
-                    <h3>Configure dans Discord</h3>
-                    <p>Tape <code>/setup</code>, choisis tes rôles staff, puis <code>/panel</code> : c'est prêt !</p>
-                </article>
+        <section id="installation" class="section">
+            <div class="conteneur">
+                <h2 class="titre-etoile reveal">Installation</h2>
+                <p class="section-intro reveal" style="margin-inline:auto">Un guide complet en français et en anglais est inclus ✦</p>
+                <div class="grille">
+                    <article class="carte reveal">
+                        <div class="numero-etape">1</div>
+                        <h3>Télécharge</h3>
+                        <p>Décompresse l'archive, puis installe le bot avec <code>npm install</code>.</p>
+                    </article>
+                    <article class="carte reveal">
+                        <div class="numero-etape">2</div>
+                        <h3>Connecte ton bot</h3>
+                        <p>Crée ton application Discord, colle ton token dans le fichier <code>.env</code> et lance <code>npm start</code>.</p>
+                    </article>
+                    <article class="carte reveal">
+                        <div class="numero-etape">3</div>
+                        <h3>Configure dans Discord</h3>
+                        <p>Tape <code>/setup</code>, choisis tes rôles staff, puis <code>/panel</code> : c'est prêt !</p>
+                    </article>
+                </div>
             </div>
         </section>
 
         <!-- ===== QUESTIONS FRÉQUENTES ===== -->
-        <section id="faq" class="section produit-section">
-            <h2 class="reveal">Questions fréquentes</h2>
-
+        <section id="faq" class="section">
+            <h2 class="titre-etoile reveal">Questions fréquentes</h2>
             <div class="faq reveal">
                 <details>
                     <summary>De quoi ai-je besoin pour utiliser SukiTickets ?</summary>
@@ -231,17 +226,18 @@
 
     <!-- ===== PIED DE PAGE ===== -->
     <footer class="footer">
-        <p class="compteur-vues" title="Nombre de visites du site">
-            <span class="compteur-icone" aria-hidden="true">👁</span>
-            <span id="nombre-vues">✦</span>
-            <span class="compteur-texte">vues</span>
-        </p>
+        <nav class="footer-liens">
+            <a href="../index.html#savoir-faire">Savoir-faire</a>
+            <a href="../index.html#boutique">Boutique</a>
+            <a href="../index.html#sur-mesure">Sur mesure</a>
+            <a href="../index.html#contact">Contact</a>
+        </nav>
+        <p class="compteur-vues" title="Nombre de visites du site"><span aria-hidden="true">👁</span><span id="nombre-vues">✦</span> vues</p>
         <p>© 2026 SukiDev · fait avec ✦ sous les étoiles</p>
     </footer>
 
-    <a href="#accueil" class="remonter" aria-label="Remonter en haut de la page"><span></span></a>
+    <a href="#haut" class="remonter" aria-label="Remonter en haut de la page"><span></span></a>
 
-    <script src="js/main.js"></script>
-
+    <script src="../assets/js/main.js"></script>
 </body>
 </html>
