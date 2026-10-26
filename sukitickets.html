@@ -163,12 +163,11 @@
                         <li>🚦 Priorité des tickets</li>
                     </ul>
 
-                    <!-- ⚠️ Remplace TA_CLE_PAYHIP (2 fois) par la clé de ton produit Payhip :
-                         c'est le code à la fin du lien payhip.com/b/XXXXX -->
-                    <a href="https://payhip.com/b/TA_CLE_PAYHIP"
+                    <!-- Bouton Payhip : la fenêtre de paiement s'ouvre sur la page -->
+                    <a href="https://payhip.com/b/3uYdW"
                        class="payhip-buy-button bouton bouton-plein"
                        data-theme="none"
-                       data-product="TA_CLE_PAYHIP">💳 Acheter — 5,99 €</a>
+                       data-product="3uYdW">💳 Acheter — 5,99 €</a>
 
                     <p class="note-paiement">Paiement sécurisé par Payhip · PayPal ou carte<br>Fichiers envoyés automatiquement</p>
                 </article>
@@ -244,14 +243,5 @@
 
     <script src="js/main.js"></script>
 
-    <!-- Tant que la clé Payhip n'est pas renseignée, le bouton affiche « Bientôt disponible » -->
-    <script>
-        document.querySelectorAll('.payhip-buy-button[data-product="TA_CLE_PAYHIP"]').forEach((bouton) => {
-            bouton.textContent = "⏳ Bientôt disponible";
-            bouton.classList.remove("payhip-buy-button");
-            bouton.classList.add("bouton-inactif");
-            bouton.removeAttribute("href");
-        });
-    </script>
 </body>
 </html>
