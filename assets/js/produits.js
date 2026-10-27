@@ -43,4 +43,13 @@ window.PRODUITS = [
         image: "assets/images/produits/nuit-etoilee/couverture.webp",
         page: "produits/nuit-etoilee.html",
     },
+    {
+        nom: "Lueur",
+        categorie: "sites",
+        accroche: "Une jolie page « lien en bio » animée pour réunir tous tes liens, en 4 couleurs, personnalisable sans coder et en ligne gratuitement.",
+        prix: "2,99 €",
+        badge: "Nouveau",
+        image: "assets/images/produits/lueur/couverture.webp",
+        page: "produits/lueur.html",
+    },
 ];
