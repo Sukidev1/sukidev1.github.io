@@ -21,6 +21,7 @@ window.CATEGORIES = [
     { id: "stream",    nom: "Stream",       emoji: "🎥" },
     { id: "sites",     nom: "Sites web",    emoji: "🌙" },
     { id: "domotique", nom: "Domotique",    emoji: "☀️" },
+    { id: "ebooks",    nom: "Ebooks",       emoji: "📚" },
 ];
 
 window.PRODUITS = [
